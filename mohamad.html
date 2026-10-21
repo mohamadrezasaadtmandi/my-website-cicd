@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فطرس - فروش لباس حرفه‌ای</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Vazirmatn',sans-serif;
+  background:#010609;
+  color:#e3d9d9;scroll-behavior:smooth;
+}
+
+header{
+  position:sticky; top:0; z-index:100;
+  background:linear-gradient(90deg, #000000, #1a1a1a, #ff8c00);
+  color:#ffd900;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 30px;
+  box-shadow:0 4px 15px rgba(255, 140, 0, 0.6);
+  transition:all 0.3s;
+}
+
+header:hover{
+  transform:scale(1.01);
+}
+
+header .logo{
+  font-size:2rem;
+  font-weight:700;
+  background:linear-gradient(45deg,#24cfd2,#ff8c00);
+  -webkit-background-clip:text; color:transparent;
+}
+
+nav a {
+  color: #ebede0;
+  text-decoration: none;
+  position: relative;
+  padding: 5px 10px;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #dbbe1b, #ff8c00);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #d0a741;
+  text-shadow: 0 0 8px rgba(255, 217, 0, 0.8);
+}
+
+
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.hero{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:90vh; text-align:center;
+  background:linear-gradient(135deg,#ff8c00,#1e1e1e);
+  animation:fadeIn 1.5s ease;
+}
+
+.hero h1{
+  font-size:3rem;
+  margin-bottom:10px;
+  animation:slideDown 1s ease;
+  background:linear-gradient(45deg,#ffd700,#ff8c00);
+  -webkit-background-clip:text;color:transparent;
+}
+
+.hero p{
+  font-size:1.3rem;
+  margin-bottom:25px;
+  animation:slideUp 1s ease;
+  color:#fff;
+}
+
+.hero button{
+  background:linear-gradient(45deg,#ffd700,#ff8c00);
+  color:#111;border:none;
+  padding:15px 30px;
+  font-size:1.2rem;
+  cursor:pointer;
+  border-radius:10px;
+  transition:0.4s;
+  box-shadow:0 4px 10px rgba(255,140,0,0.6);
+}
+.hero button:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 20px rgba(255,215,0,0.8);
+}
+
+section{
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 15px;
+}
+
+section h2{
+  margin-bottom:20px;
+  color:#ffd700;
+  font-size:2rem;
+}
+
+section p{
+  margin-bottom:10px;
+  font-size:1rem;
+  line-height:1.6;
+  color:#fff;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.product-card{
+  background:#2a2a2a;
+  border-radius:20px;
+  overflow:hidden;
+  text-align:center;
+  padding:20px;
+  box-shadow:0 6px 15px rgba(255,140,0,0.5);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 12px 25px rgba(255,215,0,0.8);
+}
+.product-card img{
+  width:100%; border-radius:15px; 
+  transition: transform 0.4s ease; 
+  will-change: transform;
+}
+.product-card img:hover{
+  transform: rotate(-5deg) scale(1.05);
+}
+.product-card h3{
+  margin:10px 0;
+  font-size:1.3rem; 
+  color:#ffd700;
+}
+.product-card p{
+  font-size:1rem;
+  color:#fff;
+}
+
+.employees{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+}
+.employee-card{
+  background:#2a2a2a; 
+  border-radius:20px;
+  overflow:hidden; 
+  text-align:center; 
+  padding:20px; 
+  box-shadow:0 6px 15px rgba(255,140,0,0.5); 
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.employee-card:hover{
+  transform:translateY(-10px); 
+  box-shadow:0 12px 25px rgba(255,215,0,0.8);
+}
+.employee-card img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  margin-bottom:10px;
+  border:3px solid #ffd700;
+  transition: transform 0.4s ease; 
+  will-change: transform;
+}
+.employee-card img:hover{
+  transform: rotate(-5deg) scale(1.05);
+}
+.employee-card h4{
+  font-size:1.2rem;
+  margin-bottom:5px;
+  color:#ffd700;
+}
+.employee-card p{
+  font-size:1rem;
+  color:#fff;
+}
+
+.contact form{
+  display:flex; 
+  flex-direction:column;
+}
+.contact input, .contact textarea{
+  padding:12px;
+  margin-bottom:15px;
+  border:2px solid #ffd700;
+  border-radius:10px;
+  font-size:1rem;
+  background:#1e1e1e;
+  color:#fff;
+}
+.contact input::placeholder, .contact textarea::placeholder{
+  color:#ccc;
+}
+.contact button{
+  background:linear-gradient(45deg,#ffd700,#ff8c00);
+  color:#111;padding:15px;
+  font-size:1.1rem;
+  border:none;
+  border-radius:10px;
+  cursor:pointer; 
+  transition:0.4s; 
+  box-shadow:0 4px 12px rgba(255,140,0,0.6);
+}
+.contact button:hover{
+  transform:scale(1.05); 
+  box-shadow:0 8px 20px rgba(255,215,0,0.8);
+}
+
+.testimonials{
+  display:grid; 
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.testimonial-card{
+  background:#2a2a2a; 
+  border-radius:20px; 
+  padding:25px; 
+  box-shadow:0 6px 15px rgba(255,140,0,0.5); 
+  transition:transform 0.3s;
+}
+.testimonial-card:hover{
+  transform:translateY(-5px);
+}
+.testimonial-card p{
+  font-size:1rem; 
+  margin-bottom:10px; 
+  color:#fff;
+}
+.testimonial-card h5{
+  font-weight:700; 
+  font-size:1.1rem; 
+  color:#ffd700;
+}
+
+#map{
+  width:90%; 
+  height:450px;
+  margin:50px auto; 
+  border-radius:20px; 
+  border:3px solid #ffd700; 
+  overflow:hidden; 
+  animation:fadeIn 2s ease;
+}
+
+footer{
+  background:#111; 
+  color:#ffd700; 
+  text-align:center; 
+  padding:25px; 
+  font-size:1rem; 
+  box-shadow:0 -4px 10px rgba(255,215,0,0.3);
+
+
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes slideDown{from{transform:translateY(-50px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@keyframes slideUp{from{transform:translateY(50px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+</style>
+</head>
+
+<body>
+<header>
+<header>
+  <div class="logo">فطرس</div>
+  <nav>
+    <a href="#hero">خانه</a>
+    <a href="#products">محصولات</a>
+    <a href="#employees">کارمندان</a>
+    <a href="#about">درباره ما</a>
+    <a href="#contact">تماس با ما</a>
+    <a href="#testimonials">مشتریان</a>
+    <a href="#map">مکان ما</a>
+    <a href="#cart" class="cart-icon" id="cart-icon">
+      🛒 <span id="cart-count">سبد خرید</span>
+    </a>
+  </nav>
+</header>
+
+
+  
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <h1>به فطرس خوش آمدید!</h1>
+  <p>یک شرکت پیشرو در زمینه لباس و پوشاک با کیفیت بالا</p>
+  <button>مدیر عامل : محمد رضا سعادتمندی</button>
+</section>
+
+<section class="products" id="products">
+  <div class="product-card"><img src="https://shixon.com/images/caticon/men-pirahan.png"><h3>لباس</h3><p>لباس با کیفیت و طراحی مدرن</p></div>
+  <div class="product-card"><img src="https://encinowear.com/wp-content/uploads/2025/04/pants-pantalo-creamkhaki-front-447x596.jpg"><h3>شلوار</h3><p>شلوار راحت و شیک</p></div>
+  <div class="product-card"><img src="https://batakhfife.com/wp-content/uploads/2023/12/8d462abf-6963-4da7-bbd3-ec48cb6e49bb-3.jpg"><h3>کاپشن</h3><p>کاپشن گرم و با دوام</p></div>
+  <div class="product-card"><img src="https://hajamooo.ir/wp-content/uploads/2023/09/7W0A0129-1.jpg"><h3>کتوتی</h3><p>کتوتی شیک و حرفه‌ای</p></div>
+  <div class="product-card"><img src="https://cdnfa.com/nadershoe/77d1/files/7321398.jpg"><h3>کفش</h3><p>کفش راحت و باکیفیت</p></div>
+  <div class="product-card"><img src="https://modelinaco.com/wp-content/uploads/2023/10/1676-2.jpg"><h3>کلاه</h3><p>کلاه مدرن و جذاب</p></div>
+  <div class="product-card"><img src="https://www.bodyspinner.co/content/media/product/42530/pro_81259_558.jpg"><h3>کفش اسپرت</h3><p>کفش اسپرت با طراحی خاص</p></div>
+  <div class="product-card"><img src="https://ilozi.com/wp-content/uploads/2024/11/VSafeV4.webp"><h3>ژاکت</h3><p>ژاکت با کیفیت بالا</p></div>
+</section>
+
+<section class="employees" id="employees">
+  <div class="employee-card"><img src="https://randomuser.me/api/portraits/men/32.jpg"><h4>علی رضایی</h4><p>مدیر عامل</p></div>
+  <div class="employee-card"><img src="https://s100.divarcdn.com/static/photo/neda/webp_post/Qh192qlsmwtyhcFR0wl2Lg/88f8aad1-72da-4911-8d4c-9dacbbd835ed.webp"><h4>زهرا موسوی</h4><p>مدیر فروش</p></div>
+  <div class="employee-card"><img src="https://randomuser.me/api/portraits/men/55.jpg"><h4>محمد کریمی</h4><p>طراح لباس</p></div>
+  <div class="employee-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaidNenjJ3logSke_wFB7hw8bAhSQYB0V1xQ&s"><h4>سارا احمدی</h4><p>توسعه دهنده وب</p></div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>تماس با ما</h2>
+  <form>
+    <input type="text" placeholder="نام شما">
+    <input type="email" placeholder="ایمیل شما">
+    <textarea placeholder="پیام شما"></textarea>
+    <button type="submit">ارسال</button>
+  </form>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="testimonial-card"><p>کیفیت محصولات عالی بود!</p><h5>مریم حسینی</h5></div>
+  <div class="testimonial-card"><p>خدمات مشتریان فوق‌العاده!</p><h5>رضا احمدی</h5></div>
+  <div class="testimonial-card"><p>ارسال سریع و به موقع.</p><h5>سارا محمدی</h5></div>
+</section>
+
+<section id="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.123456789!2d51.4215!3d35.6892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8df123456789%3A0xabcdef123456789!2z2KfZhNi52KzYrdmF2YrZhiDYp9mE2YbYudmG2Kkg2KzZhNi52YTZiNmG2YIg2KjZhNmC2LHZhCDZgNiz2K3YsdmK2YQg2YbYp9mE2LnZhtmK2YMg2KfZhNmF2YfZitmF2YbYp9mE!5e0!3m2!1sen!2s!4v1697856789012!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+
+
+<footer>
+  © 2025 فطرس - در خدمت شما
+</footer>
+
+</body>
+</html>
